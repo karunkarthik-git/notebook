@@ -1,46 +1,31 @@
-import { useEffect, useState } from 'react';
 import './App.css';
-import { getSheetData, getSheetProperties } from './services/google-sheets-service';
-import { SHEET_ID_MAPPER } from './constants/common-constants';
-import { AxiosResponse, HttpStatusCode } from 'axios';
-import { CodeBlock, codepen } from 'react-code-blocks';
+import ListItems from './components/items-list/list-items';
+import NavBar from './components/nav-bar/nav-bar';
+import { Link, Route, Routes } from 'react-router-dom';
+import NotesList from './components/notes-list/notes-list';
 
 const App = () => {
-  const [sheetNames, setSheetNames] = useState([]);
-  const [code, setCode] = useState('');
-
-  useEffect(() => {
-    // getSheetProperties(SHEET_ID_MAPPER.DSA_SHEET).then((response: AxiosResponse) => {
-    //   if (response.status === HttpStatusCode.Ok) {
-    //     setSheetNames(response.data.sheets.map((sheet: any) => sheet.properties.title));
-    //   }
-    // }).catch((error: any) => {
-    //   console.log(error);
-    // })
-  }, []);
-
-  useEffect(() => {
-    getSheetData(SHEET_ID_MAPPER.DSA_SHEET, "DUMMY")
-      .then((response: any) => {
-        if (response.status === HttpStatusCode.Ok) {
-          const data = response.data.values[1][0];
-          console.log(data);
-          setCode(data);
-        }
-      }).catch((error: any) => {
-        console.log(error);
-      })
-  }, []);
+  
+  const NoMatch = () => {
+    return (
+      <div>
+        <h2>Nothing to see here!</h2>
+        <p>
+          <Link to="/">Go to the home page</Link>
+        </p>
+      </div>
+    );
+  }
 
   return (
     <>
-      {code ?
-        <CodeBlock
-          text={code}
-          language='c++'
-          showLineNumbers={true}
-          theme={codepen}
-        /> : <></>}
+      <NavBar />
+      <Routes>
+        <Route path="*" element={<NoMatch />} />
+        <Route path="/notes/:notesId" element={<ListItems />} />
+        <Route path="/" element={<NotesList />}>
+        </Route>
+      </Routes>
     </>
   );
 }
