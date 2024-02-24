@@ -24,7 +24,7 @@ const ListItems = () => {
           }).finally(() => {
             setLoader(false);
           })
-    }, []);
+    }, [notesId]);
 
     return (
         <>
