@@ -1,3 +1,11 @@
 .offcanvas-end {
     width: 900px !important;
 }
+
+.canvas-header {
+    background-color: var(--base-light-1);
+}
+
+.canvas-body {
+    background-color: var(--base-light-2);
+}

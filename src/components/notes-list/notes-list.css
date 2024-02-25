@@ -5,14 +5,19 @@
     justify-content: flex-start;
     padding: 0 200px;
     margin-top: 160px;
-
+    gap: 24px;
     .notes-button {
-        width: 150px;
-        height: fit-content;
-        margin-right: 16px;
-        margin-top: 8px;
+        height: 54px;
+        font-weight: 700;
+        border-radius: 10px;
+        background-color: var(--base-dark-1);
+        color: var(--base-white);
+        border: none;
+        width: 180px;
     }
     .notes-button:hover, a:hover {
-        color: white;
+        color: var(--base-dark-1);
+        background-color: var(--base-light-1);
+        border-radius: 10px;
     }
 }

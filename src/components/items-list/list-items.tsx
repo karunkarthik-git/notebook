@@ -20,13 +20,13 @@ const ListItems = () => {
       <Dropdown className={`${section}`}>
         <Dropdown.Toggle variant={variant} id="dropdown-basic">{section}</Dropdown.Toggle>
         <Dropdown.Menu>
-          {list.map((data: string, index: any) => <Dropdown.Item onClick={() => {
+          {list.map((data: string, index: any) => <Dropdown.Item key={index} onClick={() => {
             setShowDetails({
               show: true,
               content: data,
               title: title
             })
-          }}>{label + " " + index}</Dropdown.Item>)}
+          }}>{label + " " + (index+1)}</Dropdown.Item>)}
         </Dropdown.Menu>
       </Dropdown>
     )
@@ -43,7 +43,7 @@ const ListItems = () => {
         <span className='solution'><a href={sourceLink} target='_blank' rel="noreferrer">Solution</a></span>
         {codes?.length > 0 ? <RenderDropdown title={title} list={codes} section={'Codes'} label={'Code '}></RenderDropdown> : <></>}
         {notes?.length > 0
-          ? <Button className='Notes' variant="secondary" onClick={() => setShowDetails({ show: true, content: notes, title: title})}>Notes</Button>
+          ? <Button className='Notes' variant="warning" onClick={() => setShowDetails({ show: true, content: notes, title: title })}>Notes</Button>
           : <></>}
       </>
     )
@@ -64,18 +64,20 @@ const ListItems = () => {
 
   return (
     <>
-      {loader ? <Loader /> : <></>}
-      <div className="list-container">
-        {
-          items.map((item: any, index: any) => {
-            if (index === 0) return <></>
-            return (
-              <div className={'info-row'} key={index}><RenderTileInfo index={index} info={item}></RenderTileInfo></div>
-            )
-          })
-        }
-      </div>
-      {showDetails?.show ? <ViewFormatter show={showDetails.show} onHide={() => setShowDetails({ show: false })} content={showDetails.content} title={showDetails.title} /> : <></>}
+      {loader ? <Loader /> : <>
+        <div className="list-container">
+          <div className='header'>{notesId}</div>
+          {
+            items.map((item: any, index: any) => {
+              if (index === 0) return <></>
+              return (
+                <div className={'info-row'} key={index}><RenderTileInfo key={index} index={index} info={item}></RenderTileInfo></div>
+              )
+            })
+          }
+        </div>
+        {showDetails?.show ? <ViewFormatter show={showDetails.show} onHide={() => setShowDetails({ show: false })} content={showDetails.content} title={showDetails.title} /> : <></>}
+      </>}
     </>
   )
 }

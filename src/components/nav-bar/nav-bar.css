@@ -1,8 +1,12 @@
 .nav-bar {
+    background-color: var(--base-dark-1);
+    font-weight: bold;
+    border: none;
     .logo {
         border-radius: 50%;
     }
     .brand-name {
         margin-left: 24px;
+        color: var(--base-white);
     }
 }

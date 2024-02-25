@@ -34,7 +34,7 @@ const NotesList = () => {
             {
                 sheetInfo.map((info: any) => {
                     return (
-                        <Link style={{ textDecoration: 'none' }} to={`/notes/${info.title}`}>
+                        <Link key={info.title} style={{ textDecoration: 'none' }} to={`/notes/${info.title}`}>
                             <Button variant="outline-primary" className="notes-button">
                                 {info.title}
                             </Button>

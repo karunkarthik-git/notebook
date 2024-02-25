@@ -4,7 +4,7 @@ import './nav-bar.css';
 
 const NavBar = () => {
     return (
-        <Navbar className="nav-bar bg-body-tertiary">
+        <Navbar className="nav-bar">
             <Container>
                 <Navbar.Brand href="/">
                     <img

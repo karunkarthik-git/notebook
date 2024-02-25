@@ -5,3 +5,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #393E46;
+}
+
+:root {
+  --base-dark-1: #222831;
+  --base-light-1: #FFD369;
+  --base-light-2: #EEEEEE;
+  --base-white: white;
+  --base-black: black;
+}
