@@ -8,4 +8,21 @@
 
 .canvas-body {
     background-color: var(--base-light-2);
+    .tool-bar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 12px;
+        .dropdown > .dropdown-toggle {
+            margin-left: 12px;
+            text-transform: capitalize;
+        }
+        .dropdown-menu {
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+        .dropdown-item {
+            text-transform: capitalize;
+        }
+    }
 }
