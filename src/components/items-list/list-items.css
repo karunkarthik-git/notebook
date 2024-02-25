@@ -39,3 +39,35 @@
         }
     }
 }
+
+@media only screen and (max-width: 576px) {
+    .list-container {
+        .info-row {
+            display: block;
+            margin-bottom: 24px;
+            .sno {
+                margin-left: 12px;
+            }
+            .date {
+                padding: 12px;
+            }
+            .title {
+                display: block;
+                padding: 12px;
+                width: 100%;
+            }
+            .date, .question, .solution {
+                display: inline-block;
+                padding: 12px;
+                width: 120px;
+                a {
+                    text-decoration: none;
+                    color: var(--base-white);
+                }
+            }
+            .Codes, .Notes {
+                display: inline-block;
+            }
+        }
+    }
+}

@@ -49,6 +49,7 @@ const ViewFormatter = (props: IViewFormatter) => {
           language='c++'
           showLineNumbers={true}
           theme={theme.value}
+          wrapLongLines={true}
         />
       </OffcanvasBody>
     </Offcanvas>

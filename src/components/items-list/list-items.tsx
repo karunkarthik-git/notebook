@@ -36,7 +36,7 @@ const ListItems = () => {
     const [date, title, qLink, sourceLink, notes, ...codes] = info;
     return (
       <>
-        <span className='sno'>{index}</span>
+        <span className='sno'>{index})</span>
         <span className='date'>{date}</span>
         <span className='title'>{title}</span>
         <span className='question'><a href={qLink} target='_blank' rel="noreferrer">Question</a></span>

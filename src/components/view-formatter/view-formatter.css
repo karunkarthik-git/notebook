@@ -26,3 +26,9 @@
         }
     }
 }
+
+@media only screen and (max-width: 576px) { 
+    .offcanvas-end {
+        width: 100% !important;
+    }
+}
