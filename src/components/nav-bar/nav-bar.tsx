@@ -1,18 +1,20 @@
 import { Container, Navbar } from "react-bootstrap";
+import Logo from '../../assets/images/codeed.png';
+import './nav-bar.css';
 
 const NavBar = () => {
     return (
-        <Navbar className="bg-body-tertiary">
+        <Navbar className="nav-bar bg-body-tertiary">
             <Container>
                 <Navbar.Brand href="/">
                     <img
-                        alt=""
-                        src="/img/logo.svg"
+                        alt="logo"
+                        src={Logo}
                         width="30"
                         height="30"
-                        className="d-inline-block align-top"
+                        className="logo d-inline-block align-top"
                     />{' '}
-                    NoteBook
+                    <span className="brand-name">NoteBook</span>
                 </Navbar.Brand>
             </Container>
         </Navbar>

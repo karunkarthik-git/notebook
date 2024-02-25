@@ -28,8 +28,9 @@ const NotesList = () => {
     }, []);
 
     return (
+        <>
+        {loader ? <Loader/> : <></>}
         <div className="notes-list-container">
-            {loader ? <Loader/> : <></>}
             {
                 sheetInfo.map((info: any) => {
                     return (
@@ -42,6 +43,7 @@ const NotesList = () => {
                 })
             }
         </div>
+        </>
     )
 }
 
