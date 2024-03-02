@@ -1,4 +1,4 @@
-import { Dropdown, Offcanvas, OffcanvasBody, OffcanvasHeader } from 'react-bootstrap';
+import { Offcanvas, OffcanvasBody, OffcanvasHeader } from 'react-bootstrap';
 import './view-formatter.css';
 import CodeMirror from "@uiw/react-codemirror";
 import { githubDark } from '@uiw/codemirror-theme-github';
@@ -13,23 +13,23 @@ interface IViewFormatter {
 const ViewFormatter = (props: IViewFormatter) => {
   const { show, onHide, content, title } = props;
 
-  const RenderDropdown = () => {
-    return (
-      <Dropdown>
-        <Dropdown.Toggle variant={'danger'} id="dropdown-basic">{'theme.name'}</Dropdown.Toggle>
-        <Dropdown.Menu>
-        </Dropdown.Menu>
-      </Dropdown>
-    )
-  }
+  // const RenderDropdown = () => {
+  //   return (
+  //     <Dropdown>
+  //       <Dropdown.Toggle variant={'danger'} id="dropdown-basic">{'theme.name'}</Dropdown.Toggle>
+  //       <Dropdown.Menu>
+  //       </Dropdown.Menu>
+  //     </Dropdown>
+  //   )
+  // }
 
-  const RenderToolSection = () => {
-    return (
-      <div className='tool-bar'>
-        <RenderDropdown></RenderDropdown>
-      </div>
-    )
-  }
+  // const RenderToolSection = () => {
+  //   return (
+  //     <div className='tool-bar'>
+  //       <RenderDropdown></RenderDropdown>
+  //     </div>
+  //   )
+  // }
 
   return (
     <Offcanvas placement='end' show={show} onHide={onHide}>
