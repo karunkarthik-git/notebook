@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './list-items.css';
 import ViewFormatter from '../view-formatter/view-formatter';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getDSASheetData } from '../../services/google-sheets-service';
 import { HttpStatusCode } from 'axios';
 import Loader from '../loader/loader';
@@ -67,7 +67,10 @@ const ListItems = () => {
     <>
       {loader ? <Loader /> : <>
         <div className="list-container">
-          <div className='header'>{notesId}</div>
+          <div className='header'>
+            <Link className='back-btn' to="/">{"<"}&nbsp;Back</Link>
+            {notesId}
+          </div>
           {
             items.map((item: any, index: any) => {
               if (index === 0) return <></>

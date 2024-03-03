@@ -11,6 +11,13 @@
         font-weight: 700;
         padding-bottom: 12px;
         margin-bottom: 12px;
+        .back-btn {
+            text-decoration: none;
+            color: var(--base-white);
+            position: absolute;
+            left: 120px;
+            font-size: 18px;
+        }
     }
     .info-row {
         display: flex;
@@ -43,6 +50,12 @@
 
 @media only screen and (max-width: 576px) {
     .list-container {
+        .header {
+            .back-btn {
+                left: 12px;
+                font-size: 12px;
+            }
+        }
         .info-row {
             display: block;
             margin-bottom: 24px;
