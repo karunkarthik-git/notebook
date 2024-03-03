@@ -24,7 +24,8 @@ const ListItems = () => {
             setShowDetails({
               show: true,
               content: data,
-              title: title
+              title: title,
+              type: 'codes'
             })
           }}>{label + " " + (index+1)}</Dropdown.Item>)}
         </Dropdown.Menu>
@@ -43,7 +44,7 @@ const ListItems = () => {
         <span className='solution'><a href={sourceLink} target='_blank' rel="noreferrer">Solution</a></span>
         {codes?.length > 0 ? <RenderDropdown title={title} list={codes} section={'Codes'} label={'Code '}></RenderDropdown> : <></>}
         {notes?.length > 0
-          ? <Button className='Notes' variant="warning" onClick={() => setShowDetails({ show: true, content: notes, title: title })}>Notes</Button>
+          ? <Button className='Notes' variant="warning" onClick={() => setShowDetails({ show: true, content: notes, title: title, type: 'notes' })}>Notes</Button>
           : <></>}
       </>
     )
@@ -76,7 +77,7 @@ const ListItems = () => {
             })
           }
         </div>
-        {showDetails?.show ? <ViewFormatter show={showDetails.show} onHide={() => setShowDetails({ show: false })} content={showDetails.content} title={showDetails.title} /> : <></>}
+        {showDetails?.show ? <ViewFormatter show={showDetails.show} onHide={() => setShowDetails({ show: false })} content={showDetails.content} title={showDetails.title} type={showDetails.type} /> : <></>}
       </>}
     </>
   )

@@ -8,10 +8,11 @@ interface IViewFormatter {
   onHide: any;
   content: string;
   title: string;
+  type: string;
 };
 
 const ViewFormatter = (props: IViewFormatter) => {
-  const { show, onHide, content, title } = props;
+  const { show, onHide, content, title, type } = props;
 
   // const RenderDropdown = () => {
   //   return (
@@ -36,13 +37,15 @@ const ViewFormatter = (props: IViewFormatter) => {
       <OffcanvasHeader className='canvas-header' closeButton>{title}</OffcanvasHeader>
       <OffcanvasBody className='canvas-body'>
         {/* <RenderToolSection></RenderToolSection> */}
-        <CodeMirror
+        { type === 'codes'
+        ? <CodeMirror
           value={content}
           lang='c++'
           readOnly={true}
           basicSetup={true}
           theme={githubDark}
         />
+        : content }
       </OffcanvasBody>
     </Offcanvas>
   )
