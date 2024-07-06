@@ -11,12 +11,20 @@
         font-weight: 700;
         padding-bottom: 12px;
         margin-bottom: 12px;
+        .back-btn {
+            text-decoration: none;
+            color: var(--base-white);
+            position: absolute;
+            left: 120px;
+            font-size: 18px;
+        }
     }
     .info-row {
         display: flex;
         align-items: center;
         .sno {
             margin-left: 120px;
+            width: 36px;
         }
         .date {
             padding: 12px 24px;
@@ -42,6 +50,12 @@
 
 @media only screen and (max-width: 576px) {
     .list-container {
+        .header {
+            .back-btn {
+                left: 12px;
+                font-size: 12px;
+            }
+        }
         .info-row {
             display: block;
             margin-bottom: 24px;
@@ -59,7 +73,7 @@
             .date, .question, .solution {
                 display: inline-block;
                 padding: 12px;
-                width: 120px;
+                width: 85px;
                 a {
                     text-decoration: none;
                     color: var(--base-white);

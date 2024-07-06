@@ -8,6 +8,8 @@
 
 .canvas-body {
     background-color: var(--base-light-2);
+    white-space: break-spaces;
+    padding: 75px 150px;
     .tool-bar {
         display: flex;
         align-items: center;
@@ -30,5 +32,9 @@
 @media only screen and (max-width: 576px) { 
     .offcanvas-end {
         width: 100% !important;
+    }
+    .canvas-body {
+        white-space: break-spaces;
+        padding: 16px;
     }
 }
